@@ -1,6 +1,7 @@
 # apkm → apk
 
 minimal, client-side `.apkm` to `.apk` web utility.
+https://demaxi1337.github.io/apkm-to-apk-converter/
 
 ## what it does
 
