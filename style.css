@@ -1,0 +1,267 @@
+:root {
+  color-scheme: dark;
+  --bg: #050505;
+  --panel: #0b0b0b;
+  --line: #1c1c1c;
+  --line-strong: #292929;
+  --text: #ededed;
+  --muted: #777;
+  --muted-2: #4d4d4d;
+  --soft: #111;
+  --white: #f4f4f4;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  letter-spacing: -0.015em;
+}
+
+button, input { font: inherit; }
+
+.shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.panel {
+  width: min(520px, 100%);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 18px;
+  box-shadow: 0 24px 80px rgba(0,0,0,.35);
+}
+
+.topline,
+.status-head,
+.status-line,
+.file-row,
+.result-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topline {
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tag,
+.ok {
+  border: 1px solid var(--line-strong);
+  color: var(--muted);
+  padding: 3px 6px;
+  font-size: 10px;
+  text-transform: lowercase;
+}
+
+.heading {
+  padding: 26px 2px 20px;
+}
+
+h1 {
+  margin: 0 0 7px;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
+.heading p,
+.note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+  text-transform: lowercase;
+}
+
+.dropzone {
+  min-height: 190px;
+  border: 1px dashed var(--line-strong);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color .15s ease, background .15s ease;
+}
+
+.dropzone:hover,
+.dropzone.dragover,
+.dropzone:focus-visible {
+  border-color: #555;
+  background: #0d0d0d;
+  outline: none;
+}
+
+.drop-icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 3px;
+  border: 1px solid var(--line-strong);
+  color: #bdbdbd;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.drop-title {
+  color: #d7d7d7;
+  font-size: 12px;
+}
+
+.drop-sub {
+  color: var(--muted-2);
+  font-size: 10px;
+}
+
+.file-row {
+  margin-top: 10px;
+  gap: 14px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  background: var(--soft);
+}
+
+.file-name,
+.result-title {
+  max-width: 360px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #ddd;
+}
+
+.file-meta,
+.result-meta {
+  margin-top: 4px;
+  color: var(--muted-2);
+  font-size: 10px;
+}
+
+.ghost,
+.convert,
+.download {
+  border: 0;
+  cursor: pointer;
+}
+
+.ghost {
+  flex: 0 0 auto;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--muted);
+  padding: 6px 8px;
+  font-size: 10px;
+}
+
+.ghost:hover { color: #bbb; border-color: #444; }
+
+.status {
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  background: #080808;
+  padding: 11px;
+}
+
+.status-head {
+  color: var(--muted-2);
+  font-size: 12px;
+  text-transform: lowercase;
+}
+
+.status-head #status-code { color: #666; }
+
+.status-line {
+  justify-content: flex-start;
+  gap: 8px;
+  margin-top: 9px;
+  color: #9a9a9a;
+  font-size: 12px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #3c3c3c;
+  flex: 0 0 auto;
+}
+
+.dot.active { background: #aaa; }
+.dot.error { background: #777; }
+.dot.ready { background: #ddd; }
+
+.convert {
+  width: 100%;
+  margin-top: 10px;
+  padding: 11px 14px;
+  background: var(--white);
+  color: #090909;
+  font-size: 11px;
+  text-transform: lowercase;
+}
+
+.convert:hover:not(:disabled) { background: #d9d9d9; }
+.convert:disabled { opacity: .28; cursor: not-allowed; }
+
+.result {
+  margin-top: 10px;
+  padding: 11px;
+  border: 1px solid var(--line-strong);
+  background: #0d0d0d;
+}
+
+.result-head { margin-bottom: 10px; }
+
+.download {
+  width: 100%;
+  padding: 10px 12px;
+  background: #161616;
+  color: #dedede;
+  border: 1px solid #242424;
+  font-size: 10px;
+  text-transform: lowercase;
+}
+
+.download:hover { background: #1b1b1b; }
+
+.download.secondary {
+  margin-top: 6px;
+  color: #8a8a8a;
+}
+
+.note {
+  margin-top: 12px;
+  text-align: center;
+  color: #404040;
+}
+
+.hidden { display: none !important; }
+
+@media (max-width: 540px) {
+  .shell { padding: 12px; }
+  .panel { padding: 14px; }
+  .dropzone { min-height: 170px; }
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <title>apkm to apk converter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <section class="panel" aria-labelledby="title">
+      <div class="topline">
+        <span class="brand">apkm → apk converter</span>
+      </div>
+
+      <div class="heading">
+        <h1 id="title">convert apkm files</h1>
+        <p>extract the base apk from an apkm package.</p>
+      </div>
+
+      <label class="dropzone" id="dropzone" for="file-input" tabindex="0">
+        <input id="file-input" type="file" accept=".apkm,application/zip" hidden>
+        <span class="drop-icon">+</span>
+        <span class="drop-title">drop .apkm here</span>
+        <span class="drop-sub">or click to browse</span>
+      </label>
+
+      <div class="file-row hidden" id="file-row">
+        <div>
+          <div class="file-name" id="file-name">—</div>
+          <div class="file-meta" id="file-meta">—</div>
+        </div>
+        <button class="ghost" id="clear-btn" type="button">clear</button>
+      </div>
+
+      <div class="status" aria-live="polite">
+        <div class="status-head">
+          <span>status</span>
+        </div>
+        <div class="status-line"><span class="dot"></span><span id="status-text">waiting for an apkm file</span></div>
+      </div>
+
+      <button class="convert" id="convert-btn" type="button" disabled>convert</button>
+
+      <div class="result hidden" id="result">
+        <div class="result-head">
+          <div>
+            <div class="result-title" id="result-title">base.apk</div>
+            <div class="result-meta" id="result-meta">—</div>
+          </div>
+        </div>
+        <button class="download" id="download-btn" type="button">download apk</button>
+        <button class="download secondary hidden" id="download-bundle-btn" type="button">download apk files</button>
+      </div>
+
+      <p class="note">notice: files are processed in your browser.</p>
+    </section>
+  </main>
+</body>
+</html>
