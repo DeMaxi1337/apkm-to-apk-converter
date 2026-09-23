@@ -9,7 +9,6 @@
   const fileName = document.getElementById("file-name");
   const fileMeta = document.getElementById("file-meta");
   const clearBtn = document.getElementById("clear-btn");
-  const statusCode = document.getElementById("status-code");
   const statusText = document.getElementById("status-text");
   const statusDot = document.querySelector(".dot");
   const convertBtn = document.getElementById("convert-btn");
@@ -32,7 +31,7 @@
   };
 
   const setStatus = (code, text, state = "") => {
-    statusCode.textContent = code;
+    // status-code element is not present in HTML — do not touch it
     statusText.textContent = text;
     statusDot.className = `dot ${state}`.trim();
   };
