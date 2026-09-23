@@ -25,12 +25,6 @@ Then open `http://localhost:8080`.
 
 `jszip` is loaded from jsdelivr. For a fully offline build, replace the CDN script with a local copy of `jszip.min.js`.
 
-## files
-
-- `index.html` — page markup
-- `style.css` — black minimal UI
-- `app.js` — archive parsing, extraction and downloads
-
 ## notes
 
 - input limit: 1 gb
